@@ -1,5 +1,5 @@
 {
-  "name": "menu_farm",
+  "name":"menu_farm2021",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
