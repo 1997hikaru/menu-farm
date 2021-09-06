@@ -23,7 +23,6 @@
 | item_name          | string     | null: false                     |
 | explanation        | text       | null: false                     |
 | category_id        | integer    | null: false                     |
-| condition_id       | integer    | null: false                     |
 | delivery_cost_id   | integer    | null: false                     |
 | prefecture_id      | integer    | null: false                     |
 | days_delivery_id   | integer    | null: false                     |
@@ -38,8 +37,7 @@
 ## purchaseテーブル
 | Column             | Type      | Options                        |
 | --------           | --------  | --------                       |
-| seller             | reference | null: false, foreign_key: true |
-| buyer              | reference | null: false, foreign_key: true |
+| user               | reference | null: false, foreign_key: true |
 | item               | reference | null: false, foreign_key: true |
 
 ### Association
