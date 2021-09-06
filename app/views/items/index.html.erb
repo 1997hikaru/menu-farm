@@ -1,0 +1,14 @@
+<%= render "shared/header"  %>
+
+<div class='main'>
+  <div class='title-contents'>
+    産直食材の購入と農家のレシピ
+  </div>
+  <h2>出品者</h2>
+</div>
+<%= link_to("#", class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>出品する</span>
+  <%= image_tag 'shopping_cart.png' , size: '100x100' ,class: "purchase-btn-icon" %>
+<% end %>
+
+<%= render "shared/footer"  %>

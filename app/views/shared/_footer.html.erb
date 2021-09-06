@@ -1,0 +1,44 @@
+<%# 下部広告部分 %>
+<div class='ad-footer-contents'>
+  <p class='ad-footer-explain'>
+    こだわり食材を簡単に購入可能
+  </p>
+  <h2 class='ad-footer-title'>
+    今すぐ無料ダウンロード！
+  </h2>
+  <div class='store-btn'>
+    <%= link_to image_tag("app-store.svg", class:"apple-btn"), "#" %>
+    <%= link_to image_tag("google-play.png", class:"google-btn"), "#" %>
+  </div>
+</div>
+<%# /下部広告部分 %>
+
+<div class='footer'>
+  <div class='footer-contents'>
+    <div class='mogumogu-details'>
+      <h2 class='footer-content-head'>MOGUMOGU PARKについて</h2>
+      <ul>
+        <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></li>
+        <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></li>
+        <li><%= link_to 'MOGUMOGU PARK利用規約', "#", class: "footer-link" %></li>
+      </ul>
+    </div>
+    <div class='mogumogu-details'>
+      <h2 class='footer-content-head'>商品を見る</h2>
+      <ul>
+        <li><%= link_to 'カテゴリー一覧', "#", class: "footer-link" %></li>
+        <li><%= link_to '出品者一覧', "#", class: "footer-link" %></li>
+      </ul>
+    </div>
+    <div class='mogumogu-details'>
+      <h2 class='footer-content-head'>MOGUMOGU PARKついて</h2>
+      <ul>
+        <li><%= link_to '利用ガイド', "#", class: "footer-link" %></li>
+        <li><%= link_to 'ロゴ利用ガイドライン', "#", class: "footer-link" %></li>
+        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+      </ul>
+    </div>
+  </div>
+  <%= link_to image_tag("icon_radish.png", class:"logo-white"), "#" %>
+  <p>© MOGUMOGU PARK</p>
+</div>
