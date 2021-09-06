@@ -1,6 +1,12 @@
 class Item < ApplicationRecord
   belongs_to :user
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+  belongs_to :prefecture
+  belongs_to :days_delivery
+  belongs_to :delivery_cost
+
   with_options presence: true do
     validates :name
     validates :explanation
