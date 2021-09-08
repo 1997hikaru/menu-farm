@@ -4,11 +4,45 @@
   <div class='title-contents'>
     産直食材の購入と農家のレシピ
   </div>
-  <h2>出品者</h2>
 </div>
-<%= link_to("#", class: 'purchase-btn') do %>
+
+<div class='item-contents'>
+  <div class="subtitle" >
+      投稿商品
+  </div>
+  <ul class='item-lists'>
+    <% @items.each do |item| %>
+    <li class='list'>
+      <%= link_to item_path(item.id), method: :get do %>
+      <div class='item-img-content'>
+        <%= image_tag(item.image, class: "item-img") %>
+
+      </div>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= item.name %>
+        </h3>
+        <div class='item-price'>
+          <span><%= item.price %>円<br>
+            <%= item.delivery_cost.name %>
+          </span>
+          <div class='star-btn'>
+            <%= image_tag "star.png", class:"star-icon" %>
+            <span class='star-count'>0</span>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+    </ul>
+  </div>
+
+<%# 商品出品ボタン%>
+<%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'shopping_cart.png' , size: '100x100' ,class: "purchase-btn-icon" %>
 <% end %>
+<%# /商品出品ボタン%>
 
 <%= render "shared/footer"  %>
