@@ -26,9 +26,8 @@
           <span><%= item.price %>円<br>
             <%= item.delivery_cost.name %>
           </span>
-          <div class='star-btn'>
-            <%= image_tag "star.png", class:"star-icon" %>
-            <span class='star-count'>0</span>
+          <div class='sellers-name'>
+            <%= item.user.nickname %>
           </div>
         </div>
       </div>
