@@ -37,7 +37,7 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #e7729f;
+  background-color: #333333;
   padding: 8px;
 }
 
@@ -73,12 +73,12 @@
   color: #333333;
 }
 
-.lists-center {
+.lists-left {
   display: flex;
   list-style: none;
   align-items: flex-end;
   padding: 10px;
-  background-color: #e7729f;
+  background-color: #fff;
 }
 
 .lists-right {
@@ -86,7 +86,7 @@
   list-style: none;
   align-items: flex-end;
   padding: 10px;
-  background-color: #67d5b5;
+  background-color: #fff;
 }
 
 .user-nickname {
