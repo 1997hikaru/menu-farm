@@ -1,0 +1,26 @@
+<%= render "shared/header" %>
+
+<div class="recipe-show">
+  <div class="tools-menu-wrapper">
+    <h2 class="recipe-title">
+      <%= @menu.recipe_title %>
+    </h2>
+    <div class="image-tools-wrapper">
+      <%= image_tag(@menu.image, class:"menu-box-img") %>
+      <div class="menu-ingredient">
+        <h2 class="ingredients-heading">材料</h2>
+        <%= @menu.ingredients_list %>
+      </div>
+    </div>
+    <div class="recipe-wrapper">
+      <h2 class="recipe-heading">作り方</h2>
+      <%= @menu.step %>
+    </div>
+    <div class="point-wrapper">
+      <h2 class="point-heading">ポイント</h2>
+      <%= @menu.point %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

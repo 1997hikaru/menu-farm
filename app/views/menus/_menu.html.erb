@@ -1,0 +1,22 @@
+    <div class="subtitle" >
+        メニュー
+    </div>
+    <ul class='menu-lists'>
+      <% @menus.each do |menu| %>
+      <li class='list'>
+        <%= link_to menu_path(menu.id), method: :get do %>
+        <div class='menu-img-content'>
+          <%= image_tag(menu.image, class: "menu-img") %>
+        </div>
+        <div class='menu-info'>
+          <h3 class='menu-name'>
+            <%= menu.recipe_title %>
+          </h3>
+          <div class='user-name'>
+            <%= menu.user.nickname %>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
