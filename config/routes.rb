@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :items do
     resources :purchases, only: [:index, :create]
   end
+  resources :cards, only: [:new, :create]
+  resources :menus
 end

@@ -1,0 +1,105 @@
+<div class="menu-post-contents">
+  <header class="menu-post-header">
+    <%= link_to image_tag('icon_radish.png' , size: '80x80'), "/" %>
+  </header>
+
+  <div class="menu-post-main">
+    <h2 class="menu-post-title">商品の情報を入力</h2>
+   <%= form_with model: @menu, local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 商品画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        料理画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"menu-image" %>
+      </div>
+    </div>
+    <%# /商品画像 %>
+    <%# 料理名 %>
+    <div class="new-menus">
+      <div class="weight-bold-text">
+        料理名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :recipe_title, class:"recipe-text", id:"recipe-title", placeholder:"料理名（必須 40文字まで)", maxlength:"40" %>
+    </div>
+    <%# /料理名 %>
+
+    <%# 料理の詳細 %>
+    <div class="menus-detail">
+      <div class="weight-bold-text">レシピの詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          料理カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:menu_category_id, MenuCategory.all, :id, :name, {}, {class:"select-box", id:"menu-category"}) %>
+        <div class="weight-bold-text">
+          材料カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category"}) %>
+      </div>
+    </div>
+    <%# /料理の詳細 %>
+
+    <%# 材料 %>
+    <div class="ingredients-list">
+      <div class="weight-bold-text">
+        材料
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :ingredients_list, class:"ingredients-text", id:"ingredients", placeholder:"材料を入力してください",rows:"7" ,maxlength:"1000" %>
+    </div>
+    <%# /材料 %>
+
+    <%# 手順 %>
+    <div class="step">
+      <div class="form">
+        <div class="weight-bold-text">
+          レシピ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :step, class:"step-text", id:"step", placeholder:"レシピを入力してください",rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /手順 %>
+
+    <%# ポイント %>
+    <div class="step">
+      <div class="weight-bold-text">
+        コツやポイント
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :point, class:"point-text", id:"point", placeholder:"コツを入力してください",rows:"2" ,maxlength:"300" %>
+    </div>
+    <%# /手順 %>
+
+    <%# 下部ボタン %>
+    <div class="post-btn-contents">
+      <%= f.submit "投稿する" ,class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+   <% end %>
+  </div>
+
+  <footer class="menu-post-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">Menu Farm利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%= link_to image_tag('icon_radish.png' , size: '80x80'), "/" %>
+    <p class="inc">
+      ©︎Menu Farm,Inc.
+    </p>
+  </footer>
+</div>

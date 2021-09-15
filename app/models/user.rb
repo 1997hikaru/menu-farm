@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_many :items, dependent: :destroy
+  has_many :items,     dependent: :destroy
   has_many :purchases, dependent: :destroy
+  has_many :menus,     dependent: :destroy
 
   with_options presence: true do
     validates :nickname
