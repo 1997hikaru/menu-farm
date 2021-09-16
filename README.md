@@ -14,6 +14,8 @@
 
 ### Association
 - has_many :items
+- has_many :purchases
+- has_many :menus
 
 
 ## itemsテーブル
@@ -31,8 +33,8 @@
 ### Association
 - belongs_to :user
 - has_one :purchase
-- has_many :comments
-
+- has_many :menus
+- has_one_attached :image
 
 ## purchaseテーブル
 | Column             | Type      | Options                        |
@@ -59,3 +61,18 @@
 ### Association
 - belongs_to :purchase
 
+## menusテーブル
+| Column             | Type      | Options                        |
+| --------           | --------  | --------                       |
+| item               | reference | null: false, foreign_key: true |
+| recipe_title       | string    | null: false                    |
+| ingredients_list   | text      | null: false                    |
+| step               | text      | null: false                    |
+| point              | text      |                                |
+| category_id        | integer   | null: false                    |
+| menu_category_id   | integer   | null: false                    |
+
+### Association
+- belongs_to :user
+- belongs_to :item
+- has_one_attached :image

@@ -4,9 +4,10 @@
   </header>
 
   <div class="menu-post-main">
-    <h2 class="menu-post-title">商品の情報を入力</h2>
-   <%= form_with model: @menu, local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
+    <h2 class="menu-post-title">レシピを入力</h2>
+    <%= form_with(model: [@item, @menu], local: true) do |f| %>
+
+    <%#= render 'shared/error_messages', model: f.object %>
 
     <%# 商品画像 %>
     <div class="img-upload">
@@ -84,7 +85,7 @@
 
     <%# 下部ボタン %>
     <div class="post-btn-contents">
-      <%= f.submit "投稿する" ,class:"post-btn" %>
+      <%= f.submit "投稿する", class:"post-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
