@@ -70,6 +70,12 @@
 
 .brand-list {
   text-decoration: none;
+  margin-right: 1vw;
+  color: #333333;
+}
+
+.menu-post-btn {
+  text-decoration: none;
   color: #333333;
 }
 

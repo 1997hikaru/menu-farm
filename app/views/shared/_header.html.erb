@@ -13,9 +13,6 @@
     <ul class='lists-left'>
       <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'メニュー投稿', new_menu_path, class: "brand-list" %></li>
-      <% end %>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

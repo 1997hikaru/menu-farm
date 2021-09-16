@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_051908) do
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.string "recipe_title", null: false
     t.text "ingredients_list", null: false
     t.text "step", null: false
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_051908) do
     t.integer "menu_category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_menus_on_item_id"
     t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
@@ -103,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_09_12_051908) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "purchases"
   add_foreign_key "items", "users"
+  add_foreign_key "menus", "items"
   add_foreign_key "menus", "users"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"

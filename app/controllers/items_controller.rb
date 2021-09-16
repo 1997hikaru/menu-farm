@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all.order(created_at: :desc)
-    @menus = Menu.all
   end
 
   def new
@@ -24,6 +23,7 @@ class ItemsController < ApplicationController
 
   def show
     @user = @item.user
+    @menus = @item.menus.includes(:user)
   end
 
   def edit
